@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ArrayTraversing</title>
+  </head>
+  <body>
+    <script>
+      let array = [1, 2, 3, 4, 9, 78, 909, 889,90,70,567,2345,85,97,6678];
+      for (let i = 0; i < array.length; i++) {
+        document.write(`array element with index ${i} is ${array[i]} <br>`);
+      }
+
+      //get array element getArrayElementValue
+      const getArrayElementValue =()=>{
+        let element = document.getElementById('elment').value;
+        if(element<array.length && typeof parseInt(element) === 'number' && element > 0){
+            alert(array[element]);
+        }else{
+            alert("please provide valid input");
+        }
+      }
+    </script>
+
+    <input type="text" id="elment" />
+    <input type="button" value="click me" onclick="getArrayElementValue()" />
+  </body>
+</html>

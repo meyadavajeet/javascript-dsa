@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert new element on desired postion</title>
+  </head>
+  <body>
+    <p>
+      Insert new element on the 2'nd postion and array with the help of loop .
+    </p>
+    <script type="text/javascript">
+      "use strict";
+      // console.log("Insert new element");
+      let array1 = [60, 30, 3, 9, 50];
+      let position = 2;
+      let newElement = 90;
+      console.log(array1, "previous array");
+      for (let i = array1.length - 1; i >= 0; i--) {
+        // console.log(array1[i]);
+        if (i >= position) {
+          array1[i + 1] = array1[i];
+          if (i == position) {
+            array1[i] = newElement;
+          }
+        }
+      }
+      console.log(array1, "new array");
+    </script>
+
+    <p>
+      Make the element and postition dyanmic {take input value from the user}
+    </p>
+    <input type="number" min="1" id="postition" placeholder="position" />
+    <input type="number" min="1" id="newElement" placeholder="New element" />
+    <button type="button" id="click" onClick="insertNewElement()">
+      Click me
+    </button>
+
+    <script type="text/javascript">
+      const insertNewElement = () => {
+        let array2 = [500, 600, 099, 232, 4534, 6655];
+        let position2 = parseInt(document.getElementById("postition").value);
+        let element2 = parseInt(document.getElementById("newElement").value);
+        if (position2 > array2.length) {
+          console.log(
+            "position you entered is greater than the length of array"
+          );
+          return false;
+        }
+        for (let j = array2.length - 1; j >= 0; j--) {
+          if (j >= position2) {
+            array2[j + 1] = array2[j];
+            if (j == position2) {
+              array2[j] = element2;
+            }
+          }
+        }
+        console.log(array2);
+      };
+    </script>
+  </body>
+</html>
