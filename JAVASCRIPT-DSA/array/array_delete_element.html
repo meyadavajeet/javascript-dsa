@@ -7,11 +7,14 @@
     <title>Delete Specific Element from an array</title>
   </head>
   <body>
+    <a href="http://learntube.ai">
+      Learn tube for free certificate and cources
+    </a>
     <p>Delete an Element from an array</p>
     <script type="text/javascript">
       let array = [34, 35, 65, 64, 32, 12];
       let position = 4;
-      console.log(array,'previous array');
+      console.log(array, "previous array");
       for (let i = position; i <= array.length - 1; i++) {
         array[i] = array[i + 1];
       }
@@ -19,7 +22,33 @@
       console.log(array);
     </script>
 
+    <p>
+      Delete Specific element from an array by using the index of the element
+    </p>
+    <input
+      type="text"
+      id="position"
+      name="position"
+      placeholder="please enter position of element"
+    />
+    <button id="delete" name="delete" onClick="deleteElement()">Delete</button>
 
-
+    <script type="text/javascript">
+      const deleteElement = () => {
+        let array1 = [340, 350, 650, 640, 320, 120];
+        let element = parseInt(document.getElementById("position").value);
+        // console.log(element);
+        console.log(array1, "array1");
+        if (element > array1.length) {
+          console.log("element you provided is greater than tha array length");
+          return false;
+        }
+        for (let j = position; j <= array1.length - 1; j++) {
+          array1[j] = array1[j + 1];
+        }
+        array1.length = array1.length - 1;
+        console.log(array1, "array1 after remove");
+      };
+    </script>
   </body>
 </html>
