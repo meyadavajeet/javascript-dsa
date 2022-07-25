@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>search element in array</title>
-</head>
-<body>
+  </head>
+  <body>
     <script type="text/javascript">
-      let array = [1, 2, 3, 4, 5,8,9,6,90,70,567,2345,85,97]
+      let array = [1, 2, 3, 4, 5, 8, 9, 6, 90, 70, 567, 2345, 85, 97];
       let itemToSearch = 97;
       let index = undefined;
-      for (let i =0; i < array.length; i++){
-        if(array[i] === itemToSearch){
-            index = i;
-            break;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === itemToSearch) {
+          index = i;
+          break;
         }
       }
-      console.log(index)
+      console.log(index);
 
       // default function to search
       console.log(array.indexOf(itemToSearch));
     </script>
+  </body>
 
-</body>
 </html>
