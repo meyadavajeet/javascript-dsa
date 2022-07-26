@@ -22,6 +22,30 @@
       // default function to search
       console.log(array.indexOf(itemToSearch));
     </script>
-  </body>
 
+    <p>Array dynamically search by getting value from user</p>
+    <input
+      type="number"
+      id="itemToSearch"
+      placeholder="itemToSearch"
+      required
+    />
+    <button type="button" onClick="searchItemInArray()">Click me</button>
+
+    <script type="text/javascript">
+      const searchItemInArray = () => {
+        let array1 = [1, 2, 3, 4, 5, 8, 9, 6, 90, 70, 567, 2345, 85, 97];
+        let itemToSearch1 = parseInt(document.getElementById("itemToSearch").value);
+        var index1 = undefined;
+        // debugger
+        for (let j = 0; j < array1.length; j++) {
+          if (array1[j] === itemToSearch1) {
+            index1 = j;
+            break;
+          }
+        }
+        console.log(index1);
+      };
+    </script>
+  </body>
 </html>
