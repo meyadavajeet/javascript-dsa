@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array reverse using for loop</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      "use strict";
+      let array = [1, 2, 3, 4, 5, 8, 9, 6, 90, 70, 567, 2345, 85, 97];
+      let reversedArray = [];
+      let j = 0;
+      for (let i = array.length - 1; i >= 0; i--) {
+        reversedArray[j++] = array[i];
+      }
+      console.log(reversedArray);
+    </script>
+  </body>
+</html>
