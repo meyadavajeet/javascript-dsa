@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow Dom</title>
+    <script src="./index.js"></script>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- If you want to shadow dom in inbult html -->
+    <!-- open developer option and tick  show user agent shadow dom -->
+
+    <input type="range" />
+    <p class="error">This is error</p>
+    <!-- create shadow dom using javascipt -->
+    <custom-tag
+      data="This the custom-tag made using the shadow dom function is
+      attachShadow()"
+    ></custom-tag>
+    <!-- in custom tag error class is provided but not affect the shadow dom -->
+  </body>
+</html>
