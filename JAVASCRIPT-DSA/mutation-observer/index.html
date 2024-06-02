@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutation & Observer in JavaScript</title>
+  </head>
+  <body>
+    <div id="elemId">
+      <div contenteditable="true" id="div1">
+        div 1
+        <div id="inner-div">Inner Div</div>
+      </div>
+      <div contenteditable="true" id="div2">div 2</div>
+      <div contenteditable="true" id="div2">div 2</div>
+    </div>
+    <button onclick="deleteDiv()">Delete A div</button>
+    <button onclick="deleteInnerDiv()">Delete Inner div</button>
+    <button onclick="updateAttributeOfDiv()">update Attribute Of div</button>
+    <button onclick="updateDivVal()">update value Of div</button>
+    <script>
+      // let observer = new MutationObserver((data) => {
+      //   console.log(data);
+      // });
+      // observer.observe(elemId, {
+      //   childList: true,
+      //   subtree: true,
+      //   attributeFilter: true,
+      //   characterDataOldValue: true,
+      // });
+
+      let observer = new MutationObserver((data) => {
+        console.log(data);
+      });
+      observer.observe(elemId, {
+        childList: true,
+        subtree: true,
+        attributeFilter: ["class"],
+        characterDataOldValue: true,
+      });
+
+      function deleteDiv() {
+        document.getElementById("elemId").children[0].remove();
+      }
+      function deleteInnerDiv() {
+        document.getElementById("div1").querySelector("#inner-div").remove();
+      }
+      function updateAttributeOfDiv() {
+        document.getElementById("elemId").children[0].className = "hello";
+      }
+      function updateDivVal() {
+        document.getElementById("elemId").children[0].textContent =
+          "hello bhai";
+      }
+    </script>
+  </body>
+</html>
