@@ -23,4 +23,10 @@ class BankAccount {
 const bankAccount = new BankAccount();
 function getClassData() {
   console.log(bankAccount.getSpecialData());
+  //output
+  //   {
+  //     "name": "Ajeet Yadav",
+  //     "pin": "123123",
+  //     "ifceCode": "BKID0000123"
+  // }
 }
