@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example of Event bubbling</title>
+    <style>
+      .top-div {
+        background-color: orange;
+        padding: 30px;
+      }
+      .mid-div {
+        background-color: green;
+        padding: 30px;
+      }
+      .inner-div {
+        background-color: white;
+        padding: 30px;
+      }
+    </style>
+    <script>
+      function topDiv() {
+        alert("Top div");
+      }
+      function midDiv() {
+        // for stopping event bubbling
+        event.stopPropagation();
+        alert("mid div");
+      }
+      function innerDiv() {
+        // for stopping event bubbling
+        event.stopPropagation();
+        alert("inner div");
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Event Bubbling</h2>
+    <h4>
+      Event first captured, handled by target element and propagated to the
+      parent until reaches the document object
+    </h4>
+    <div class="top-div" onclick="topDiv()">
+      top div
+      <div class="mid-div" onclick="midDiv()">
+        mid div
+        <div class="inner-div" onclick="innerDiv()">inner div</div>
+      </div>
+    </div>
+  </body>
+</html>
