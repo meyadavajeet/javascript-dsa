@@ -65,10 +65,10 @@ console.log(uniqueArr1);
 
 let x = 10;
 x = ((x += 20), x); // here before comma calculate and after comma return the value
-console.log(x); // 30
+console.log(x); // 30cv
 
 // ! Swap number without using the third variable
 let a = 20;
 let b = 30;
 [a, b] = [b, a];
-console.log(a, b);
+console.log(a, b); // 30 20
