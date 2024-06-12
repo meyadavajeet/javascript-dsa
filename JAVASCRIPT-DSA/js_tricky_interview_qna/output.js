@@ -241,3 +241,87 @@ The Object.seal() static method seals an object. Sealing an object prevents exte
 // delete arr[1]; // it will delete the value and re-assign with empty value
 // console.log(arr); // [ 'perer', <1 empty item>, 'tony' ]
 // console.log(arr.length); // 3
+
+//?38
+// console.log(3*3) // 27
+// console.log(3**4) // 81
+// console.log(3*3*3*3) //81
+
+//? 39
+// let a = 2;
+// setTimeout(() => {
+//   console.log(a);
+// });
+// a = 100;
+// output
+// 100
+
+//? 39.1
+// let a = 2;
+// console.log("1st a is", a);
+// setTimeout(() => {
+//   console.log("4th a is", a);
+//   console.log("5th a is", a);
+// });
+// console.log("2nd a is", a);
+// a = 100;
+// console.log("3rd a is", a);
+
+//output is
+/*
+1st a is 2
+2nd a is 2
+3rd a is 100
+4th a is 100
+5th a is 100
+*/
+
+//? 43
+// let a = 1;
+// let b = 2;
+// console.log(--b === a); // true
+
+//? 44
+// let a = 1;
+// let b = 1;
+// let c = 2;
+// console.log((b === a) === --c); // false
+// console.log((b === a) === true); // true
+
+//?45
+// console.log(3*3) // 9
+// console.log(3**3) // 27
+// console.log(3***3) // SyntaxError: Unexpected token '*'
+
+//? find os name
+// console.log(navigator.platform);
+
+//? 52
+// for (let index = 0; index < 3; index++) {
+//   setTimeout(() => console.log(index), 1);
+// }
+//output
+/*
+0
+1
+2
+*/
+
+// //? 53
+// for (var index = 0; index < 3; index++) {
+//   setTimeout(() => console.log(index), 1);
+// }
+//output
+/*
+3
+3
+3
+*/
+
+// ?54
+// console.log(+true); // 1
+// console.log(typeof +true); // true
+
+// //?55
+// console.log(!"anil"); // false
+// console.log(typeof "anil"); // string
