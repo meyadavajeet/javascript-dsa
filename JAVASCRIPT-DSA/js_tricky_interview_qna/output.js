@@ -325,3 +325,146 @@ The Object.seal() static method seals an object. Sealing an object prevents exte
 // //?55
 // console.log(!"anil"); // false
 // console.log(typeof "anil"); // string
+
+//?67 eval function in js [evaluate mathematical calculation]
+// const sum = eval("10*10+5");
+// console.log(sum);
+
+//? 68 how long the cool_secret accessible?
+// sessionStorage.setItem("cool_secret", 123);
+// Ans - Until we close the application active tab of the browser
+
+//? 69
+// const obj = {
+//   1: "a",
+//   2: "b",
+//   3: "c",
+// };
+
+// console.log(obj.hasOwnProperty(1)); // true
+// console.log(obj.hasOwnProperty("1")); // true
+
+// ? 75
+// function sayHi() {
+//   return (() => 0)(); // immediatilly invoked
+// }
+// console.log(typeof sayHi()); // number because of arrow function immediatilly invoked
+
+// ? 76
+// function sayHi() {
+//   return () => 0;
+// }
+// console.log(typeof sayHi()); // function
+
+//?79 infinite condition nested array
+// const number = [1, 2, 3];
+// number[9] = number;
+// console.log(number);
+
+// ? 82
+// console.log(setInterval(() => console.log("Hi1"), 1000));
+// console.log(setInterval(() => console.log("Hi2"), 1000));
+// console.log(setInterval(() => console.log("Hi3"), 1000));
+
+// ? 83
+// console.log("Ajeet"); // A j e e t
+// console.log([..."Ajeet"]); // [ 'A', 'j', 'e', 'e', 't' ]
+
+//?84 Promise.race
+// const firstPromise = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 101, "One");
+// });
+
+// const secondPromise = new Promise((resolve, reject) => {
+//   setTimeout(resolve, 100, "Two");
+// });
+
+// Promise.race([firstPromise, secondPromise]).then((result) =>
+//   console.log(result)
+// );
+
+//output
+// Two
+
+// ? 86 for in loop alwyas give keys of object
+// const person = {
+//   name: "Hanuman",
+//   aget: 500000,
+// };
+
+// for (const key in person) {
+//   if (Object.hasOwnProperty.call(person, key)) {
+//     const element = person[key];
+//     console.log(element);
+//   }
+// }
+// output
+// Hanuman
+// 500000
+// ?86.1
+// for (const item in person) {
+//   console.log(item);
+// }
+
+//output
+// name
+// aget
+
+//? 87
+// let data = 3 + 4 + "5";
+// console.log(data); // 75
+
+// console.log(typeof 3 + 4 + "5"); // number45
+// console.log(typeof (3 + 4 + +"5")); // number
+// console.log(3 + 4 + +"5"); // 12
+
+// ?90
+// console.log([] == []); // false (memory location of both array different)
+
+//? 91
+// let data = [1, 2, 3].map((num) => {
+//   if (typeof num === "number") return;
+//   return 2 * num;
+// });
+// console.log(data);
+// output
+/*
+[ undefined, undefined, undefined ]
+*/
+
+//? 92
+// function getInf(member) {
+//   member.name = "Ram";
+// }
+
+// let person = {
+//   name: "BalRam",
+// };
+
+// getInf(person);
+// console.log(person); // Ram
+/*
+  note - here call by reference is working and when object got passed then memory location get passed and when we change the value then value got updated on the same memory location
+  */
+//? 93
+// function Car() {
+//   this.make = "Tata";
+//   return { make: "Kiya" };
+// }
+
+// const car = new Car();
+// console.log(car.make);
+
+// output
+// Kiya
+/* Note - When we return something from the Constructor function by reassiging the same variable then value got updated */
+
+// function Car1() {
+//   this.make = "Tata";
+// }
+
+// const car1 = new Car1();
+// console.log(car1.make);
+// output
+// Tata;
+/* Note - Here we are not returning anything then the value same as assigned */
