@@ -74,3 +74,23 @@ console.log(str.substring(1, str.length));
  * */
 //? Remove extra spaces from both side
 // console.log(str.trim());
+
+//? concat two string
+// let str2 = "Sab badhiya bhai";
+// console.log(str.concat(str2));
+/**
+ * output
+ * Hello, How are you?Sab badhiya bhai
+ */
+
+// console.log(`${str} ${str2}`);
+/**
+ * output
+ * Hello, How are you? Sab badhiya bhai
+ */
+
+//? remove extra space from left only
+console.log(str.trimStart());
+
+//? remove extra space from right only
+console.log(str.trimEnd());
