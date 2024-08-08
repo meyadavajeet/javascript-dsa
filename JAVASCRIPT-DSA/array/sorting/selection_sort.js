@@ -14,6 +14,7 @@ function selectionSort(arr) {
     arr[i] = temp;
   }
   console.log(arr);
+  return arr;
 }
 
 let arr = [13, 14, 12, 11, 23];
