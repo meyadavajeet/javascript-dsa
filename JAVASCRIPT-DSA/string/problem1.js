@@ -5,7 +5,6 @@ const maxOccuring = (string) => {
   let maxKey = undefined;
   for (const element of string) {
     obj[element] = (obj[element] || 0) + 1;
-    // console.log(obj[element]);
     // console.log(element);
     if (maxKey === undefined || obj[element] > obj[maxKey]) {
       maxKey = element;
@@ -16,7 +15,7 @@ const maxOccuring = (string) => {
   // console.log(obj);
 };
 
-// maxOccuring("heklllo");
+maxOccuring("heklllo");
 
 const maxOccuringWithForLoop = (str) => {
   let obj = {};
@@ -35,4 +34,4 @@ const maxOccuringWithForLoop = (str) => {
   return maxKey;
 };
 
-maxOccuringWithForLoop("heklllo");
+// maxOccuringWithForLoop("heklllo");
