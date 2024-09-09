@@ -1,5 +1,11 @@
 # JAVASCRIPT CONCEPTS
 
+### PostgreSql Link
+
+YT - https://www.youtube.com/watch?v=cnzka7kF5Zk
+
+Slides - https://www.canva.com/design/DAGGQI3jsQo/aZYZy0_PSEFsRfFUMNZx2g/edit
+
 ### What is hoisting? Explain with example.
 
 - Variable and functions are hoisted which means there declaration is moved to top.
@@ -230,6 +236,3 @@ do {
   console.log("Hey");
 } while (a < 112);
 ```
-
-
-
