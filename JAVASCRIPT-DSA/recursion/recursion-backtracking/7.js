@@ -1,6 +1,7 @@
 // WAP for find fabonacci series using recurssion
 
 function fabonacci(n) {
+  console.log("order of execution ", n);
   if (n <= 1) {
     return n;
   }
