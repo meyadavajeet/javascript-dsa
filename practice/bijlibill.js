@@ -1,4 +1,4 @@
-/**
+/*
  * question -
  * upto 100 unit - RS. 4.2/unit
  * 101 -  200 unit - RS. 6/unit
