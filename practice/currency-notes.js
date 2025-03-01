@@ -51,4 +51,21 @@ const calculateNotes = (totalAmount) =>{
 
 }
 
-calculateNotes(totalAmount);
+// calculateNotes(totalAmount);
+
+let num = 0.1 + 0.2;
+num = Math.round(num*100 ) /100;
+console.log(num)
+switch(num) {
+    case 0.3:
+        console.log("hello")
+        break;
+    case 0.5:
+        console.log("hey")
+        break
+    default:
+        console.log("default block")
+}
+
+
+// when you find the typeof null - it always gives you object
