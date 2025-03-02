@@ -61,5 +61,12 @@ const arraySorting = (arr) => {
     }
     console.log(arr)
 }
+// const arr = [8, 2, 1, 849, 990, 99, 90];
+// arraySorting(arr);
+
+// Create a function that will copy of an array
+// and do not mutate it/ do not change the actual value of the array
 const arr = [8, 2, 1, 849, 990, 99, 90];
-arraySorting(arr);
+const arr2 = [...arr];
+arr2.push(90,90,7879);
+console.log(arr2);
