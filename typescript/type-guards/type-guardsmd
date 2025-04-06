@@ -1,0 +1,111 @@
+# 🛡️ Type Guards and Utility Types in TypeScript
+
+TypeScript provides mechanisms like **type guards** and **utility types** to refine and control types at runtime and design time respectively.
+
+---
+
+## 🔍 Type Guards
+
+Type guards are expressions that perform a runtime check that guarantees the type in a specific scope.
+
+### 📘 Using `typeof`
+
+```ts
+function printId(id: number | string) {
+  if (typeof id === "string") {
+    console.log(id.toUpperCase());
+  } else {
+    console.log(id.toFixed(2));
+  }
+}
+```
+
+### 📙 Using `instanceof`
+
+```ts
+class Dog {
+  bark() { console.log("Woof!"); }
+}
+
+class Cat {
+  meow() { console.log("Meow!"); }
+}
+
+function speak(pet: Dog | Cat) {
+  if (pet instanceof Dog) {
+    pet.bark();
+  } else {
+    pet.meow();
+  }
+}
+```
+
+---
+
+## 🧰 Utility Types
+
+TypeScript provides several built-in utility types to transform existing types.
+
+### 🔹 `Partial<T>`
+
+Makes all properties optional.
+
+```ts
+interface User {
+  name: string;
+  age: number;
+}
+
+const updateUser = (user: Partial<User>) => {
+  // All properties are optional
+};
+```
+
+### 🔸 `Required<T>`
+
+Makes all optional properties required.
+
+```ts
+interface Settings {
+  theme?: string;
+  layout?: string;
+}
+
+const applySettings = (config: Required<Settings>) => {
+  // All properties must be provided
+};
+```
+
+### 🔒 `Readonly<T>`
+
+Makes all properties read-only.
+
+```ts
+interface Profile {
+  username: string;
+  email: string;
+}
+
+const profile: Readonly<Profile> = {
+  username: "john_doe",
+  email: "john@example.com",
+};
+
+// profile.email = "new@example.com"; // ❌ Error: Cannot assign to 'email'
+```
+
+---
+
+## ✅ Summary Table
+
+| Utility Type   | Description                            |
+|----------------|----------------------------------------|
+| `Partial<T>`   | Makes all properties optional          |
+| `Required<T>`  | Makes all optional properties required |
+| `Readonly<T>`  | Makes all properties read-only         |
+
+| Type Guard     | Description                            |
+|----------------|----------------------------------------|
+| `typeof`       | Checks for primitive types             |
+| `instanceof`   | Checks if an object is an instance of a class |
+
