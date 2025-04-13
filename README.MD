@@ -236,3 +236,96 @@ do {
   console.log("Hey");
 } while (a < 112);
 ```
+
+
+#Sql queries
+```SQL
+SELECT
+  tier,
+  GROUP_CONCAT(DISTINCT country ORDER BY country) AS countries,
+  COUNT(*) AS transactions,
+  ROUND(SUM(amount), 2) AS total_amount,
+  ROUND(SUM(amount * commission), 2) AS total_commission
+FROM (
+  SELECT
+    t.amount,
+    c.country,
+    CASE
+      WHEN c.country IN ('Austria', 'Belgium', 'France', 'Germany') THEN 'A'
+      WHEN c.country IN ('United Kingdom', 'United States') THEN 'B'
+      ELSE 'C'
+    END AS tier,
+    CASE
+      WHEN c.country IN ('Austria', 'Belgium', 'France', 'Germany') THEN 0.1219
+      WHEN c.country IN ('United Kingdom', 'United States') THEN 0.233
+      ELSE 0.3
+    END AS commission
+  FROM customers c
+  JOIN transactions t ON c.id = t.customer_id
+) AS sub
+GROUP BY tier
+ORDER BY tier;
+```
+
+# Area of tringle
+```Javascript
+function getTriangleArea(x, y) {
+    const area = 0.5 * Math.abs(
+        x[0] * (y[1] - y[2]) +
+        x[1] * (y[2] - y[0]) +
+        x[2] * (y[0] - y[1])
+    );
+    return Math.floor(area);
+}
+```
+
+# Queries
+```SQL
+
+WITH CombinedOrders AS (
+    SELECT
+        'Buy' AS order_type,
+        product_name,
+        CAST(SUBSTR(dt, 1, 7) AS DATE) AS order_month,
+        price
+    FROM
+        buy_orders
+    WHERE
+        SUBSTR(dt, 1, 7) = '2024-02'
+    UNION ALL
+    SELECT
+        'Sell' AS order_type,
+        product_name,
+        CAST(SUBSTR(dt, 1, 7) AS DATE) AS order_month,
+        price
+    FROM
+        sell_orders
+    WHERE
+        SUBSTR(dt, 1, 7) = '2024-02'
+),
+AggregatedOrders AS (
+    SELECT
+        order_type,
+        product_name,
+        COUNT(*) AS total_orders,
+        ROUND(AVG(price), 2) AS average_order_price,
+        ROW_NUMBER() OVER (PARTITION BY order_type ORDER BY AVG(price) DESC) AS rn
+    FROM
+        CombinedOrders
+    GROUP BY
+        order_type,
+        product_name
+)
+SELECT
+    order_type,
+    product_name,
+    total_orders,
+    average_order_price
+FROM
+    AggregatedOrders
+WHERE
+    rn <= 3
+ORDER BY
+    order_type ASC,
+    average_order_price DESC;
+```
