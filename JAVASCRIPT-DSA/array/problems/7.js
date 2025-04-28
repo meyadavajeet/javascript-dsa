@@ -75,4 +75,34 @@ function arrayRightRotationByKStep(arr, k) {
   return arr;
 }
 
-arrayRightRotationByKStep([1, 2, 3, 4, 5], 2);
+// arrayRightRotationByKStep([1, 2, 3, 4, 5], 2);
+
+/**
+ * ? efficient way of k rotation in linear time complexity
+ * by using algo=> 
+ * ? tempArr[i] = arr[(i + k) % arr.length];
+ * need of extra array of same lenght of the given array
+ *
+ */
+
+function kLeftRotationOptimized(arr, k) {
+  let tempArr = new Array(arr.length);
+  k = k % arr.length;
+  for (let i = 0; i < arr.length; i++) {
+    tempArr[i] = arr[(i + k) % arr.length];
+  }
+  console.log(tempArr);
+}
+
+// kLeftRotationOptimized([1, 2, 3, 4, 5], 2);
+
+function kRightRotationOptimized(arr, k){
+  let tempArr = new Array(arr.length);
+  k = k % arr.length;
+  for (let i = 0; i < arr.length; i++) {
+    tempArr[(i + k) % arr.length] = arr[i];
+  }
+  console.log(tempArr);
+}
+
+kRightRotationOptimized([1, 2, 3, 4, 5], 2);
