@@ -12,4 +12,4 @@ console.log(arr.length - 2);
 // by using at function
 console.log(arr.at(-1)); // for last element
 console.log(arr.at(-2)); // for second last element
-console.log(arr.at()); // for first element
+console.log(arr.at(0)); // for first element
