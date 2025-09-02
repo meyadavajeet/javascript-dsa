@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let name = "Prem";
 console.log(name);
 // array types in typescript
