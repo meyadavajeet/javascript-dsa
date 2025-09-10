@@ -23,6 +23,7 @@
    Used for primitive types (string, number, boolean, symbol, bigint, undefined).
  */
 
+   export {}
 function printValue(value: string | number) {
   if (typeof value === "string") {
     console.log(value.toUpperCase()); // value: string
