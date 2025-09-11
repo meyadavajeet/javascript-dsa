@@ -25,9 +25,9 @@ interface DatabaseInfo {
   port: number;
 }
 
-function anotherFunction1<T, DatabaseInfo>(
+function anotherFunction1<T, U extends DatabaseInfo>(
   valueOne: T,
-  dbInfo: DatabaseInfo
+  dbInfo: U
 ): Object {
   return {
     valueOne,
@@ -44,3 +44,23 @@ const dbInfo: DatabaseInfo = {
 };
 
 anotherFunction1(2, dbInfo);
+
+// Generics with class
+interface Quiz {
+  name: string;
+  type: string;
+}
+
+interface Course {
+  name: string;
+  author: string;
+  subject: string;
+}
+
+class Sellable<T> {
+  public cart: T[] = [];
+
+  addToCart(product : T){
+    this.cart.push(product)
+  }
+}
