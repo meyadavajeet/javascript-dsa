@@ -19,7 +19,7 @@ printUploadStatus(UploadStatus.draft);
 console.log(UploadStatus);
 
 // const enum
-// it is removed fro the final js output
+// it is removed from the final js output
 
 const enum HttpStatusCode{
   ok = 200,
